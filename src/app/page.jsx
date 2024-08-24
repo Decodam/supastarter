@@ -3,9 +3,8 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
-import { Book, Palette, Zap, Rocket, ChevronRight, Heart } from "lucide-react"
 import { ThemeToggleIconButton } from "@/components/ui/theme";
+import { IconBook, IconPalette, IconBrandSupabase, IconRocket, IconChevronRight, IconHeart, IconBrandGithub } from "@tabler/icons-react";
 
 export default function Home() {
   const user = false;
@@ -20,7 +19,7 @@ export default function Home() {
         </Link>
 
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
           {(user) ? (
             <>
 
@@ -31,8 +30,12 @@ export default function Home() {
             </>
           ) : (
             <div className="flex items-center gap-2">
-              <Button variant="outline">Login</Button>
-              <Button>Signup</Button>
+              <Button variant="outline" asChild>
+                <Link href="/login">Login</Link>
+              </Button>
+              <Button asChild>
+                <Link href="/signup">Signup</Link>
+              </Button>
             </div>
           )}
 
@@ -49,7 +52,7 @@ export default function Home() {
           >
             Supabase SSR - Read Docmentation
             <span className="py-1.5 px-2.5 inline-flex justify-center items-center gap-x-2 rounded-full bg-muted-foreground/15 font-semibold text-sm">
-              <ChevronRight className="flex-shrink-0 w-4 h-4" />
+              <IconChevronRight className="flex-shrink-0 w-4 h-4" />
             </span>
           </a>
         </div>
@@ -68,7 +71,11 @@ export default function Home() {
         
 
         <div className="mt-8 gap-3 flex justify-center">
-          <Button size={"lg"}>Get started</Button>
+          <Button size={"lg"} asChild>
+            <Link href={"/login"}>
+              Get started
+            </Link>
+          </Button>
           <Button size={"lg"} variant={"outline"} asChild>
             <Link href="https://paper-dryosaurus-158.notion.site/Supastarter-73998669d8d545ee836d9deea1452adf?pvs=25">
               Read Docs
@@ -103,7 +110,7 @@ export default function Home() {
             href="https://ui.shadcn.com/docs/installation/next"
           >
             Installation Guide
-            <ChevronRight className="flex-shrink-0 w-4 h-4" />
+            <IconChevronRight className="flex-shrink-0 w-4 h-4" />
           </a>
         </div>
       </div>
@@ -114,7 +121,7 @@ export default function Home() {
         <Card className="bg-card/10 ext-foreground">
           <CardHeader>
             <CardTitle className="flex items-center">
-              <Zap className="mr-2 h-5 w-5 text-[#3ECF8E]" />
+              <IconBrandSupabase className="mr-2 h-5 w-5 text-[#3ECF8E]" />
               Supabase Docs
             </CardTitle>
             <CardDescription className="text-muted-foreground">
@@ -131,7 +138,7 @@ export default function Home() {
         <Card className="bg-card/10 text-foreground">
           <CardHeader>
             <CardTitle className="flex items-center">
-              <Book className="mr-2 h-5 w-5 text-[#3ECF8E]" />
+              <IconBook className="mr-2 h-5 w-5 text-[#3ECF8E]" />
               Next.js Docs
             </CardTitle>
             <CardDescription className="text-muted-foreground">
@@ -148,7 +155,7 @@ export default function Home() {
         <Card className="bg-card/10 text-foreground">
           <CardHeader>
             <CardTitle className="flex items-center">
-              <Palette className="mr-2 h-5 w-5 text-[#3ECF8E]" />
+              <IconPalette className="mr-2 h-5 w-5 text-[#3ECF8E]" />
               shadcn/ui Docs
             </CardTitle>
             <CardDescription className="text-muted-foreground">
@@ -165,7 +172,7 @@ export default function Home() {
         <Card className="bg-card/10 text-foreground">
           <CardHeader>
             <CardTitle className="flex items-center">
-              <Rocket className="mr-2 h-5 w-5 text-[#3ECF8E]" />
+              <IconRocket className="mr-2 h-5 w-5 text-[#3ECF8E]" />
               SupaStarter Kit
             </CardTitle>
             <CardDescription className="text-muted-foreground">
@@ -185,7 +192,7 @@ export default function Home() {
         <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
           <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
             <p className="text-center text-xs leading-loose text-muted-foreground md:text-left">
-              Built with <Heart className="inline-block h-4 w-4 text-red-500" /> by{" "}
+              Built with <IconHeart className="inline-block h-4 w-4 text-red-500" /> by{" "}
               <Link
                 href="https://github.com/Decodam"
                 target="_blank"
@@ -202,7 +209,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="flex items-center gap-1 text-xs font-medium underline underline-offset-4"
             >
-              <GitHubLogoIcon className="h-4 w-4" />
+              <IconBrandGithub className="h-4 w-4" />
               Project Repository
             </Link>
           </div>
